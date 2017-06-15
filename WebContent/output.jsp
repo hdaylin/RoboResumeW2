@@ -7,6 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>${fnamesession}</h1>
+<h1>${fnamesession}</h1> 
+<p>${firstname} ${lname}</p>
+
+<p>${email}</p> 
+
+<p>${skill}</p>
+
 </body>
 </html>
