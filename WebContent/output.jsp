@@ -6,13 +6,27 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
-<h1>${fnamesession}</h1> 
-<p>${firstname} ${lname}</p>
+<body>  
+
+<center>
+<h1>${fname}</h1> 
+<p>${fname} ${lname}</p>
 
 <p>${email}</p> 
 
-<p>${skill}</p>
+</center>
+<h2>Education</h2>
+<p>${schoolsession}, ${degreeyear}</p>
+<p>${degreesession} </p> 
+
+<h2>Experience</h2>
+<p>${exp}</p>
+<h5>Duties:</h5>
+<p>${duty1}</p> 
+<p>${duty2}</p> 
+
+<h1>Skills</h1>
+<p>${skill}, ${level}</p> 
 
 </body>
 </html>

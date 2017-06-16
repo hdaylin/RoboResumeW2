@@ -5,6 +5,8 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet; 
 import java.sql.DriverManager;
+import java.util.Iterator;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -30,7 +32,7 @@ public class Resume extends HttpServlet {
 			//Establish connection to database  
 
 			// comes from the index 
-			String firstname = request.getParameter("firstname"); 
+			String firstname = request.getParameter("fname"); 
 			//String firstname = request.getParameter("firstname");
 
 			//variable for session - jsp will call this 
@@ -52,10 +54,10 @@ public class Resume extends HttpServlet {
 				System.out.println(rs.getString(1)+"  "+rs.getString(2)
 				+"  "+rs.getString(3) +"  "+rs.getString(4));  	  
 
-				String fname = rs.getString(2); 
-				String lname = rs.getString(3);
-				String email = rs.getString(4); 
-				request.setAttribute("firstname", fname); 
+				String fname = rs.getString("fname"); 
+				String lname = rs.getString("lastname");
+				String email = rs.getString("email"); 
+				request.setAttribute("fname", fname); 
 				request.setAttribute("lname", lname);
 				request.setAttribute("email", email); 
 
@@ -64,7 +66,9 @@ public class Resume extends HttpServlet {
 			query = ("SELECT SKILL_NAME FROM PERSON, EDUCATION, SKILLS WHERE FNAME = '"+firstname+"';"); 
 			ResultSet rs2=stmt.executeQuery(query);  //cursor pointer to the row of the table 
 
-				while(rs2.next()){  // from the current pointer till the end of the table
+		//	Iterator itr = new rs2.iterator(); 
+			
+			while(rs2.next()){  // from the current pointer till the end of the table
 					
 					String skill = rs2.getString(1); 
 					request.setAttribute("skill", skill); 
