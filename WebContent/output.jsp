@@ -8,6 +8,8 @@
 </head>
 <body>  
 
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
+
 <center>
 <h1>${fname}</h1> 
 <p>${fname} ${lname}</p>
@@ -16,7 +18,7 @@
 
 </center>
 <h2>Education</h2>
-<p>${schoolsession}, ${degreeyear}</p>
+<p>${schoolsession}, ${degreeyear}</p> 
 <p>${degreesession} </p> 
 
 <h2>Experience</h2>

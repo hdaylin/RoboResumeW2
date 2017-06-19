@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -81,14 +82,38 @@ public class insert extends HttpServlet {
 			session.setAttribute("duty2", duty2);
 		
 
-			education a = new education(degree, school, year); 
+			education a = new education(degree, school, year);
+			
 			Skill b =new Skill(skill, level); 
 			experience c = new experience(exp, duty1, duty2);
 			
+			education temp = new education(degree, school, year);
+			ArrayList<education> al = new ArrayList<education>();  
 			
-			ArrayList<education> al = new ArrayList<education>(); 
-			ArrayList<Skill> sk = new ArrayList<Skill>();
-			ArrayList<experience> ex = new ArrayList<experience>();
+			//Iterator  = education.iterator(); 
+
+			//System.out.println("#1 normal for loop");
+			for (int i = 0; i < al.size(); i++) {
+				System.out.println(al.get(i)); 
+				System.out.println(al.get(i).getDegree()+ al.get(i).getSchool() + al.get(i).getYear());
+			}
+			
+			/*for (String tempout: edu){
+				
+				
+			}*/
+			ArrayList<Skill> sk = new ArrayList<Skill>(); 
+			
+			for (int i = 0; i < sk.size(); i++) {
+				System.out.println(sk.get(i)); 
+				System.out.println(sk.get(i).getLevel() + sk.get(i).getName());
+			}
+			
+			ArrayList<experience> ex = new ArrayList<experience>(); 
+			for (int i = 0; i < ex.size(); i++) {
+				System.out.println(ex.get(i)); 
+				System.out.println(ex.get(i).getDuty1()+ ex.get(i).getDuty2() + ex.get(i).getJob());
+			}
 			
 			
 			al.add(a); 
